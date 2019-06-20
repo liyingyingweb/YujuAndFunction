@@ -63,6 +63,20 @@
 			console.log(parseFloat("3.14.djfdsf"));   //3.14
 			console.log(parseInt("1.233gddg65"));    //1
 			console.log(parseInt(true));     //NaN
+			
+			console.log("*****划重点******");
+			console.log(undefined == 0);           //false   undefined只能和自己本身相等或者是和null
+			console.log(undefined == '');         //false
+			console.log(undefined == false);     //false
+			console.log(null == '');            //false
+			console.log(undefined == null);    //true
+			console.log(null == null);        //true
+			console.log(false == '');        //true
+			console.log(false == false);    //true
+			console.log(!undefined);       //true
+			console.log(!null);           //true
+			console.log(!false);         //true
+			// console.log(!字符串);        //true
 		</script>
 	</body>
 </html>
