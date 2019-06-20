@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>运算符</title>
+		<style>
+			.box{
+				width: 960px;
+				margin: 50px auto;
+				text-align: center;
+				border: 1px solid #ccc;
+			}
+			.box a{
+				text-align: center;
+				line-height: 50px;
+				color: palevioletred;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<a href="index.html">点击跳转到index</a>
+			<a href="demo01.html">点击跳转到demo01</a>
+			<a href="demo02.html">点击跳转到demo02</a>
+			<a href="demo03.html">点击跳转到demo03</a>
+			<a href="demo04.html">点击跳转到demo04</a>
+			<a href="demo05.html">点击跳转到demo05</a>
+			<a href="demo06.html">点击跳转到demo06</a>
+			<a href="demo07.html">点击跳转到demo07</a>
+			<a href="demo08.html">点击跳转到demo08</a>
+			<a href="demo09.html">点击跳转到demo09</a>
+			<a href="demo10.html">点击跳转到demo10</a>
+			<a href="demo11.html">点击跳转到demo11</a>
+			<a href="demo12.html">点击跳转到demo12</a>
+			<a href="demo13.html">点击跳转到demo13</a>
+			<a href="demo14.html">点击跳转到demo14</a>
+			<a href="demo15.html">点击跳转到demo15</a>
+			<a href="demo16.html">点击跳转到demo16</a>
+			<a href="demo17.html">点击跳转到demo17</a>
+			<a href="demo18.html">点击跳转到demo18</a>
+		</div>
+		<script type="text/javascript">
+			var k;
+			for(var i=0,j=0;i<10,j<5;i++,j++){
+				k = i+j;
+			}      //计算逗号后边的数
+			console.log(k);   //8
+			
+			var a = (false,true);
+			var b = (true,false);
+			console.log(a);       //true
+			console.log(b);      //false
+			
+			var c = 'sed' + 'abc';
+			var d = 'dfsf' + 12;
+			var e =  12 + 'dfsf';
+			console.log(c);        //sedabc
+			console.log(d);       //dfsf12
+			console.log(e);      //12dfsf
+			
+			var f = '11'+1-2;
+			console.log(f);   //109
+			
+			var m = 'a'-1;
+			console.log(m);     //NaN
+			
+			var g = 1+true;
+			console.log(g);    //2
+			
+			
+			
+			//字符串反转
+			document.write("字符串反转：" + '<br/>');
+			var str1 = "smile at life";
+			document.write(str1 + '<br/>');
+			var str2 = "smile at life";
+			document.write(str2.split("").reverse().join(""));
+			// split将字符串分割    使用reverse()方法创建一个新数组      join()方法将数组的每个元素连接在一起，组合成一个新字符串
+		</script>
+	</body>
+</html>

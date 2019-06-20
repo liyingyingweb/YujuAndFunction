@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>循环语句之嵌套循环练习</title>
+		<style>
+			.box{
+				width: 960px;
+				margin: 50px auto;
+				text-align: center;
+				border: 1px solid #ccc;
+			}
+			.box a{
+				text-align: center;
+				line-height: 50px;
+				color: palevioletred;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<a href="index.html">点击跳转到index</a>
+			<a href="demo01.html">点击跳转到demo01</a>
+			<a href="demo02.html">点击跳转到demo02</a>
+			<a href="demo03.html">点击跳转到demo03</a>
+			<a href="demo04.html">点击跳转到demo04</a>
+			<a href="demo05.html">点击跳转到demo05</a>
+			<a href="demo06.html">点击跳转到demo06</a>
+			<a href="demo07.html">点击跳转到demo07</a>
+			<a href="demo08.html">点击跳转到demo08</a>
+			<a href="demo09.html">点击跳转到demo09</a>
+			<a href="demo10.html">点击跳转到demo10</a>
+			<a href="demo11.html">点击跳转到demo11</a>
+			<a href="demo12.html">点击跳转到demo12</a>
+			<a href="demo13.html">点击跳转到demo13</a>
+			<a href="demo14.html">点击跳转到demo14</a>
+			<a href="demo15.html">点击跳转到demo15</a>
+			<a href="demo16.html">点击跳转到demo16</a>
+			<a href="demo17.html">点击跳转到demo17</a>
+			<a href="demo18.html">点击跳转到demo18</a>
+		</div>
+		<script type="text/javascript">
+			// for 语句练习1
+			for(var c=10;c>=5;c--){
+				for(var d=c;c>5;c--){
+					document.write(c);
+				}
+			}
+			document.write('<br>');
+
+		   // for 语句练习2
+			for(var i=10;i>=5;i--){
+				for(var j=i;j>5;j--){
+					document.write(j);
+					document.write('<br>');
+				}
+		   }
+
+		   // for 语句练习3
+			for(var i=1;i<=5;i++){
+				for(var j=1;j<i;j++){
+					document.write(i*j);
+					// document.write('<br>');
+				}
+		   }
+
+		   // for 语句练习4
+			for(var i=1;i<=5;i++){
+				if(i%2==0){
+					continue;
+				}
+				for(var j=1;j<i;j++){
+					document.write(j);
+					document.write('<br>');
+				}
+		   }
+
+		   // for 语句练习5
+			for(var i=1;i<=5;i++){
+				if(i%2==0){
+					break;
+				}
+				for(var j=1;j<i;j++){
+					document.write(j);
+					// document.write('<br>');
+				}
+			}
+			
+			
+			//for 语句练习6
+			// *
+			// * *
+			// * * *
+			// * * * *
+			// * * * * *
+			for(var j=1;j<=10;j++){
+				for(var i=1;i<=j;i++){
+					document.write('*');
+				}
+				document.write('<br/>');
+			}
+			
+			document.write('<br/>');
+			document.write('<br/>');
+			
+			//for 语句练习7
+			// * * * * *
+			// * * * *
+			// * * *
+			// * *
+			// *
+			for(var j=10;j>=1;j--){
+				for(var i=1;i<=j;i++){
+					document.write('*');
+				}
+				document.write('<br/>');
+			}
+			
+			//for 语句练习8
+			//         * 
+			//       * * * 
+			//     * * * * *
+			//   * * * * * * *
+			// * * * * * * * * *
+			
+			// for(var i=1;i<=5;i++){
+			// 	for(var j=1;j<=i;j++){
+			// 		document.write('*');
+			// 	}
+			// 	document.write('<br/>');
+			// }
+			// 
+			function triangle1(){
+				for(var i=0;i<5;i++){
+					for(var j=0;j<5-i-1;j++){
+						document.write("&nbsp");
+					}
+					for(var k=0;k<2*i+1;k++){
+						document.write("*");
+					}
+					document.write("<br/>");
+				}
+			}
+			triangle1();
+			
+			document.write("<br/>");
+			
+			
+			//for 语句练习9
+			// * * * * * * * * *
+			//   * * * * * * *
+			//     * * * * *
+			//       * * * 
+			//         *
+			
+			function triangle2(){
+				for(var i=5;i>0;i--){
+					for(var j=0;j<5-i-1;j++){
+						document.write("&nbsp");
+					}
+					for(var x=0;x<2*i-1;x++){
+						document.write("*");
+					}
+					document.write("<br/>");
+				}
+			}
+			triangle2();
+			
+			
+			//九九乘法表 10
+			document.write("<table border='1px'  cellpadding='0' cellspacing='0'>");
+			for (var i=1;i<=9;i++){
+				document.write("<tr>");
+				for (var j=1;j<=i;j++){
+					document.write("<td>");
+					document.write(i + "x" + j + "=" + i*j);
+					document.write("</td>");
+				}
+				document.write("</tr>");
+			}
+			
+			//练习11： 有一分数序列:1/2,1/4,1/6,1/8......,求此数列前100项的和
+		   //                各项  1/(1*2), 1/(2*2), 1/(3*2), 1/(4*2) 
+			
+			//a用来存放分子，b用来存放分母，s用来存放前100项的和
+			var a=1;
+			var b=2;
+			var sum=0;
+			for(var i=1;i<=100;i++){
+				sum = sum + 1/(i*b);
+			}
+			document.write("分数数列求和：" + sum);
+			document.write("<br/>");
+			
+			//练习12:  Fibonacci数列又称斐波那契数列,又称黄金分割数列,指的是这样一个数列:
+				       // 1 1 2 3 5 8 13 21.....,求第100项的数值.
+		</script>
+	</body>
+</html>

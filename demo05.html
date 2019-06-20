@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>while循环语句</title>
+		<style>
+			.box{
+				width: 960px;
+				margin: 50px auto;
+				text-align: center;
+				border: 1px solid #ccc;
+			}
+			.box a{
+				text-align: center;
+				line-height: 50px;
+				color: palevioletred;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="box">
+			<a href="index.html">点击跳转到index</a>
+			<a href="demo01.html">点击跳转到demo01</a>
+			<a href="demo02.html">点击跳转到demo02</a>
+			<a href="demo03.html">点击跳转到demo03</a>
+			<a href="demo04.html">点击跳转到demo04</a>
+			<a href="demo05.html">点击跳转到demo05</a>
+			<a href="demo06.html">点击跳转到demo06</a>
+			<a href="demo07.html">点击跳转到demo07</a>
+			<a href="demo08.html">点击跳转到demo08</a>
+			<a href="demo09.html">点击跳转到demo09</a>
+			<a href="demo10.html">点击跳转到demo10</a>
+			<a href="demo11.html">点击跳转到demo11</a>
+			<a href="demo12.html">点击跳转到demo12</a>
+			<a href="demo13.html">点击跳转到demo13</a>
+			<a href="demo14.html">点击跳转到demo14</a>
+			<a href="demo15.html">点击跳转到demo15</a>
+			<a href="demo16.html">点击跳转到demo16</a>
+			<a href="demo17.html">点击跳转到demo17</a>
+			<a href="demo18.html">点击跳转到demo18</a>
+		</div>
+		<script type="text/javascript">
+			var year = 1;
+			while(year<=5){
+				console.log("spring");
+				year++;
+			}
+			console.log(year);
+			
+			//打印 0-100的数字
+			var num1 = 1;
+			while(num1<=100){
+				console.log(num1);
+				num1++;
+			}
+			
+			//打印 1-100之间的奇数
+			//方法1
+			var num = 1;
+			while(num<=100){
+				if(num%2==1){
+					console.log(num);
+				}
+				num++;
+			}
+			
+			//方法2
+			var num2 = 1;
+			while(num2<=100){
+				console.log(num2);
+				num2 = num2+2;
+			}
+			
+			//方法3
+			var num3 = 1;
+			var i =0;
+			while(i<50){
+				num3 = i*2+1;
+				console.log(num3);
+				i++;
+			}
+		</script>
+	</body>
+</html>

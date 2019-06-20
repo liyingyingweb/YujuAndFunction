@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>swicth语句</title>
+		<style>
+			.box{
+				width: 960px;
+				margin: 50px auto;
+				text-align: center;
+				border: 1px solid #ccc;
+			}
+			.box a{
+				text-align: center;
+				line-height: 50px;
+				color: palevioletred;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" value="" placeholder="请输入月份" id="txtmonth">
+		<input type="button" value="月份" id="btnmonth">
+		<div id="showMsg"></div>
+		<div class="box">
+			<a href="index.html">点击跳转到index</a>
+			<a href="demo01.html">点击跳转到demo01</a>
+			<a href="demo02.html">点击跳转到demo02</a>
+			<a href="demo03.html">点击跳转到demo03</a>
+			<a href="demo04.html">点击跳转到demo04</a>
+			<a href="demo05.html">点击跳转到demo05</a>
+			<a href="demo06.html">点击跳转到demo06</a>
+			<a href="demo07.html">点击跳转到demo07</a>
+			<a href="demo08.html">点击跳转到demo08</a>
+			<a href="demo09.html">点击跳转到demo09</a>
+			<a href="demo10.html">点击跳转到demo10</a>
+			<a href="demo11.html">点击跳转到demo11</a>
+			<a href="demo12.html">点击跳转到demo12</a>
+			<a href="demo13.html">点击跳转到demo13</a>
+			<a href="demo14.html">点击跳转到demo14</a>
+			<a href="demo15.html">点击跳转到demo15</a>
+			<a href="demo16.html">点击跳转到demo16</a>
+			<a href="demo17.html">点击跳转到demo17</a>
+			<a href="demo18.html">点击跳转到demo18</a>
+		</div>
+		<script type="text/javascript">
+			// 方法1
+			var currMonth = 10;
+			if(currMonth >= 3 && currMonth < 5){
+				console.log("spring");
+			}else if(currMonth >= 6 && currMonth < 8){
+				console.log("summer");
+			}else if(currMonth >= 9 && currMonth < 11){
+				console.log("autumn");
+			}else if(currMonth == 12 || (currMonth <= 2 && currMonth > 0)){
+				console.log("winter");
+			}else{
+				console.log("没有该月份");
+			}
+			
+			// 方法2
+			var txtmonth = document.getElementById("txtmonth");
+			var btnmonth = document.getElementById("btnmonth");
+			var showMsg = document.getElementById("showMsg");
+			btnmonth.onclick = function(){
+				var currMonth = parseFloat(txtmonth.value);
+				switch(currMonth){
+					case 3:
+					case 4:
+					case 5:
+					{
+						showMsg.innerHTML = '<span style="color:red;">春天来了</span>';
+						console.log("春天来了");
+						break;
+					}
+					case 6:
+					case 7:
+					case 8:
+					{
+						showMsg.innerHTML = '<span style="color:blue;">夏天来了</span>';
+						console.log("夏天来了");
+						break;
+					}
+					case 9:
+					case 10:
+					case 11:
+					{
+						showMsg.innerHTML = '<span style="color:pink;">秋天来了</span>';
+						console.log("秋天来了");
+						break;
+					}
+					case 12:
+					case 1:
+					case 2:
+					{
+						showMsg.innerHTML = '<span style="color:cyan;">冬天来了</span>';
+						console.log("冬天来了");
+						break;
+					}
+					default:{
+						showMsg.innerHTML = '<span style="color:plum;">没有该月份</span>';
+						console.log("没有该月份");
+						break;
+					}
+				}
+			}
+		</script>
+	</body>
+</html>

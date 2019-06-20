@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>语句</title>
+		<style>
+			.box{
+				width: 960px;
+				margin: 50px auto;
+				text-align: center;
+				border: 1px solid #ccc;
+			}
+			.box a{
+				text-align: center;
+				line-height: 50px;
+				color: palevioletred;
+			}
+		</style>
+	</head>
+	<body id="mybody">
+		<input type="text" value="" placeholder="请输入你的成绩" id="txtgrade">
+		<input type="button" value="评测" id="btnpingce">
+		<input type="button" value="换色" id="btnhuanse">
+		<div id="showMsg"></div>
+		<div class="box">
+			<a href="index.html">点击跳转到index</a>
+			<a href="demo01.html">点击跳转到demo01</a>
+			<a href="demo02.html">点击跳转到demo02</a>
+			<a href="demo03.html">点击跳转到demo03</a>
+			<a href="demo04.html">点击跳转到demo04</a>
+			<a href="demo05.html">点击跳转到demo05</a>
+			<a href="demo06.html">点击跳转到demo06</a>
+			<a href="demo07.html">点击跳转到demo07</a>
+			<a href="demo08.html">点击跳转到demo08</a>
+			<a href="demo09.html">点击跳转到demo09</a>
+			<a href="demo10.html">点击跳转到demo10</a>
+			<a href="demo11.html">点击跳转到demo11</a>
+			<a href="demo12.html">点击跳转到demo12</a>
+			<a href="demo13.html">点击跳转到demo13</a>
+			<a href="demo14.html">点击跳转到demo14</a>
+			<a href="demo15.html">点击跳转到demo15</a>
+			<a href="demo16.html">点击跳转到demo16</a>
+			<a href="demo17.html">点击跳转到demo17</a>
+			<a href="demo18.html">点击跳转到demo18</a>
+		</div>
+		<script type="text/javascript">
+			var txtgrade = document.getElementById("txtgrade");
+			var btnpingce = document.getElementById("btnpingce");
+			var showMsg = document.getElementById("showMsg");
+			//输入成绩 点击评测 
+			btnpingce.onclick = function(){
+				var grade = parseFloat(txtgrade.value);
+				if(isNaN(grade)){
+					showMsg.innerHTML = '<span style="color:yellow;">格式错误</span>';
+				}else if(grade < 60){
+					showMsg.innerHTML = '<span style="color:red;">不及格</span>';
+				}else if(grade < 80){
+					showMsg.innerHTML = '<span style="color:green;">及格</span>';
+				}else if(grade < 90){
+					showMsg.innerHTML = '<span style="color:pink;">优秀</span>';
+				}else if(grade <= 100){
+					showMsg.innerHTML = '<span style="color:cyan;">优等</span>';
+				}else{
+					showMsg.innerHTML = '<span style="color:blue;font-size:50px;">恭喜你！</span>';
+				}
+			}
+			
+			//点击换色按钮,body换背景颜色
+			var mybody = document.getElementById("mybody");
+			var curr = "red";
+			btnhuanse.onclick = function(){
+				mybody.style = "background:"+curr+";";
+				if(curr == "red"){
+					curr = "yellow";
+				}else if(curr == "yellow"){
+					curr = "green";  
+				}else if(curr == "green"){
+					curr = "blue";  
+				}else if(curr == "blue"){
+					curr = "black";  
+				}else if(curr == "black"){
+					curr = "red";
+				}
+			}
+			
+		</script>
+	</body>
+</html>

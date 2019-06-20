@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>函数练习之黄金分割系列(斐波那契数列)</title>
+		<style>
+			.box{
+				width: 960px;
+				margin: 50px auto;
+				text-align: center;
+				border: 1px solid #ccc;
+			}
+			.box a{
+				text-align: center;
+				line-height: 50px;
+				color: palevioletred;
+			}
+		</style>
+	</head>
+	<body>
+		<input type="text" id="btnyear" placeholder="请输入年份" value=""><br>
+		<input type="button" id="btnqueren" value="确认">
+		<br/>
+		<div class="box">
+			<a href="index.html">点击跳转到index</a>
+			<a href="demo01.html">点击跳转到demo01</a>
+			<a href="demo02.html">点击跳转到demo02</a>
+			<a href="demo03.html">点击跳转到demo03</a>
+			<a href="demo04.html">点击跳转到demo04</a>
+			<a href="demo05.html">点击跳转到demo05</a>
+			<a href="demo06.html">点击跳转到demo06</a>
+			<a href="demo07.html">点击跳转到demo07</a>
+			<a href="demo08.html">点击跳转到demo08</a>
+			<a href="demo09.html">点击跳转到demo09</a>
+			<a href="demo10.html">点击跳转到demo10</a>
+			<a href="demo11.html">点击跳转到demo11</a>
+			<a href="demo12.html">点击跳转到demo12</a>
+			<a href="demo13.html">点击跳转到demo13</a>
+			<a href="demo14.html">点击跳转到demo14</a>
+			<a href="demo15.html">点击跳转到demo15</a>
+			<a href="demo16.html">点击跳转到demo16</a>
+			<a href="demo17.html">点击跳转到demo17</a>
+			<a href="demo18.html">点击跳转到demo18</a>
+		</div>
+		<script type="text/javascript">
+			/*
+				黄金分割数列   斐波那契数列
+				1 1 2 3 5 8 13
+			*/
+		   
+			// 从2开始 2+3=5  3是qian1  2是qian2  5是nzhi;
+			//         3+5=8  3是qian2 5是qian1 8是nzhi;
+			// 以此类推
+			
+			function shulie(n){    // n 是 第几项
+				var qian1=1;    // qian1存前第一项的值  比如:2+3=5 3是qian1
+				var qian2=1;    // qian2存前第二项的值  比如:2+3=5 2是qian2
+				var nzhi;       // 第几项的值      
+				if(n==1 ||n==2){
+					nzhi=1;     //因为第一项和第二项都是1 所以nzhi都是1
+				}else{
+					for(var i=3;i<=n;i++){    //从第三项开始
+						nzhi = qian1 + qian2;
+						qian2 = qian1;   //2+3=5  3是qian1  2是qian2  5是nzhi;
+						qian1 = nzhi;    //3+5=8  3是qian2  5是qian1  8是nzhi;
+					}
+				}
+				return nzhi;
+			}
+			var result = shulie(6);
+			console.log(result);
+			
+			
+			// 作业
+			// 1、有一分数序列:1/2,1/4,1/6,1/8......,求此数列前n项的和
+			// 2、判断一个数是否是质数（只能被1和它本身整除的数 2 3 5）
+			// 3、请输出1-n之间所有的质数
+			// 4、判断 年份 是否是闰年 能被4整除 但不能被100整除的数 比如：2004
+			// 5、实现一个加减乘除计算器
+		   
+		   
+		   //请输出1-n之间所有的质数
+			for(var i = 1 ; i <= 100 ; i++){
+				k = 0;
+				for(var j = 1 ; j < i ; j++){
+					if(i%j == 0){
+					   k++;
+					}
+				}
+				if(k == 1){
+					document.write(i + ',');
+				}
+			}
+			document.write("<br/>");
+			 
+			
+			var prime = function(len){
+			var i,j;
+			var arr = [];
+			for(i = 1; i < len; i++){
+				for(j=2; j < i; j++){   
+					if(i%j === 0) {
+						break;
+					}
+				}
+				if(i <= j && i !=1){ 
+					arr.push(i);
+				}
+			}
+				return arr;
+			};
+			document.write(prime(1000));
+			   
+		   
+			//判断 年份 是否是闰年  能被400整除或者能被4整除 但不能被100整除的数
+			var btnyear = document.getElementById("btnyear");
+			var btnqueren = document.getElementById("btnqueren");
+			btnqueren.onclick = function(){
+				var year = btnyear.value;
+				if(year.length == 0){
+					alert("请输入正确的年份");
+				}else if(year % 4 == 0 || year % 400 == 0 && year % 100 != 0){
+					alert("闰年");
+				}else{
+				　　alert("平年");
+				}
+			}
+		</script>
+	</body>
+</html>

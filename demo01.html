@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>语句</title>
+		<style>
+			.box{
+				width: 960px;
+				margin: 50px auto;
+				text-align: center;
+				border: 1px solid #ccc;
+			}
+			.box a{
+				text-align: center;
+				line-height: 50px;
+				color: palevioletred;
+			}
+		</style>
+	</head>
+	<body id="mybody">
+		<input type="button" name="" value="变色" id="btnChange1">
+		<input type="button" name="" value="变色" id="btnChange2">
+		<input type="button" name="" value="变色" id="btnChange3">
+		<input type="button" name="" value="变色" id="btnChange4">
+		<div class="box">
+			<a href="index.html">点击跳转到index</a>
+			<a href="demo01.html">点击跳转到demo01</a>
+			<a href="demo02.html">点击跳转到demo02</a>
+			<a href="demo03.html">点击跳转到demo03</a>
+			<a href="demo04.html">点击跳转到demo04</a>
+			<a href="demo05.html">点击跳转到demo05</a>
+			<a href="demo06.html">点击跳转到demo06</a>
+			<a href="demo07.html">点击跳转到demo07</a>
+			<a href="demo08.html">点击跳转到demo08</a>
+			<a href="demo09.html">点击跳转到demo09</a>
+			<a href="demo10.html">点击跳转到demo10</a>
+			<a href="demo11.html">点击跳转到demo11</a>
+			<a href="demo12.html">点击跳转到demo12</a>
+			<a href="demo13.html">点击跳转到demo13</a>
+			<a href="demo14.html">点击跳转到demo14</a>
+			<a href="demo15.html">点击跳转到demo15</a>
+			<a href="demo16.html">点击跳转到demo16</a>
+			<a href="demo17.html">点击跳转到demo17</a>
+			<a href="demo18.html">点击跳转到demo18</a>
+		</div>
+		<script type="text/javascript">
+			var anniu1 = document.getElementById("btnChange1");
+			var anniu2 = document.getElementById("btnChange2");
+			var anniu3 = document.getElementById("btnChange3");
+			var anniu4 = document.getElementById("btnChange4");
+			var mybody = document.getElementById("mybody");
+			//通过点击按钮 让网页 粉色蓝色来回切换
+			//方法1
+			var curr = "blue";
+			anniu1.onclick = function(){
+				mybody.style = "background:"+curr+";";
+				if(curr == "blue"){
+					curr = "pink";
+				}else{
+					curr="blue";  
+				}
+			}
+			
+			//方法2
+			var isBlue = true;
+			anniu2.onclick = function(){
+				if(isBlue){
+					mybody.style = "background:red";
+				}else{
+					mybody.style = "background:black";
+				}
+				isBlue = !isBlue;
+			}
+			
+			//方法3
+			var i = 0;
+			anniu3.onclick = function(){
+				i++;
+				if(i%2 == 1){
+					mybody.style = "background:plum";
+				}else{
+					mybody.style = "background:skyblue";
+				}
+			}
+			
+			//方法4
+			var a = 0;
+			anniu4.onclick = function(){
+				if(a == 0){
+					mybody.style = "background:yellow";
+					a = 1;
+				}else{
+					mybody.style = "background:green";
+					a = 0;
+				}
+			}
+		</script>
+	</body>
+</html>
