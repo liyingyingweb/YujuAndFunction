@@ -68,7 +68,13 @@
 			</tr>
 			<tr>
 				<td><input class="number" type="button" name="" value="0"></td>
-				<td><input type="button" name="" value="."></td>
+				<td><input class="jisuan" type="button" name="" value="." onclick="calCulate(this.value)"></td>
+				<td><input type="button" name="" value="+/-"></td>
+				<td><input class="jisuan" type="button" name="" value="/"></td>
+			</tr>
+			<tr>
+				<td><input class="jisuan" type="button" name="" value="%"></td>
+				<td><input id="btntuige" type="button" name="" value="退格"></td>
 				<td><input id="btnclear" type="button" name="" value="清屏"></td>
 				<td><input id="btncalc" type="button" name="" value="="></td>
 			</tr>
@@ -110,6 +116,7 @@
 					txtResult.value = temp;
 				}
 			}
+			//清屏
 			btnclear.onclick = function(){
 				txtResult.value = "0";
 			}
@@ -122,7 +129,6 @@
 					temp = "";
 				}
 			}
-			
 			//等于
 			btncalc.onclick = function(){
 				secondNum = parseInt(temp,10);   //10进制   得到第一个值
@@ -133,7 +139,14 @@
 					txtResult.value = firstNum - secondNum;
 				}else if(yunsuanfu == 'x'){
 					txtResult.value = firstNum * secondNum;
+				}else if(yunsuanfu == '/'){
+					txtResult.value = firstNum / secondNum;
 				}
+			}
+			//退格
+			btntuige.onclick = function(){
+				temp = temp.substr(0,temp.length-1);    //substr (起始位置,长度)
+				txtResult.value = temp;
 			}
 		</script>
 	</body>
